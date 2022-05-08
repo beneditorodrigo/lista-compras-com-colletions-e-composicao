@@ -20,4 +20,15 @@ public class Compra {
 		var produto = new Produto(nome, preco);
 		itens.add(new Item(produto, quantidade));
 	}
+	
+	//método para retornar o valor de uma compra
+	double valorDaCompra() {
+		double valorTotalDaCompra = 0;
+		
+		for(Item item : itens) {
+			valorTotalDaCompra += item.quantidade * item.produto.preco;
+		}
+		
+		return valorTotalDaCompra;
+	}
 }
